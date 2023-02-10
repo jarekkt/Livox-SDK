@@ -27,13 +27,9 @@ else(WIN32)
 endif (WIN32)
 
 target_compile_options(${SDK_LIBRARY}
-        PRIVATE $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-field-initializers -fPIC>
         PRIVATE $<$<CXX_COMPILER_ID:GNU>:-Wall -Werror -Wno-c++11-long-long>
         PRIVATE $<$<CXX_COMPILER_ID:AppleClang>:-Wno-unknown-pragmas -Wall -Werror -Wno-c++11-long-long>
         PRIVATE $<$<CXX_COMPILER_ID:Clang>:-Wno-unknown-pragmas -Wall -Werror -Wno-c++11-long-long>)
-
-
-
 
 target_sources(${SDK_LIBRARY}
         PRIVATE
